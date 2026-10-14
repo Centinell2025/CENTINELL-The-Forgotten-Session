@@ -1,36 +1,27 @@
 # CENTINELL — The Forgotten Session
 
-**Difficulty:** Easy | **Category:** Digital Forensics / Authentication Logs
+**Hack The Box Sherlock candidate** · **Difficulty:** Easy · **Category:** Digital Forensics / Authentication Logs
 
-## Case briefing
-On October 9, 2026, Northvale Enterprises (entirely fictional) reviewed authentication activity on workstation `NVE-WS14`. A retired account may have been used after its scheduled departure. Investigate the attached evidence and reconstruct the relevant logon. Do not assume every failed logon is malicious.
+## Scenario
+On 9 October 2026, the SOC at **Northvale Enterprises** (a completely fictional training organization) reviewed unusual activity involving an identity retired the previous month. A small set of Windows-like event records spans several workstations and includes legitimate activity, failed logons, and more than one session for the retired identity. Investigators must determine exactly what the data establishes.
 
-## Learning objectives
-- Interpret Windows Security Event IDs 4624 (successful logon), 4625 (failed logon), and 4634 (logoff) in exported records.
-- Distinguish source IP, target username, and logon ID.
-- Correlate the account inventory with authentication events.
-- Extract exact UTC-formatted answers from the evidence.
+## Investigation objective
+Correlate account status and authentication events; isolate the relevant host/session; establish a defensible timeline and session duration. Distinguish suspicious authentication from evidence of an actual intrusion.
 
-## Evidence
-- `evidence/windows_security_events.csv` — **synthetic lab-generated** Windows-like event exports (not an original EVTX capture).
-- `evidence/account_status.csv` — fictional HR / account status inventory.
-- `SHA256SUMS.txt` — SHA-256 hashes of the evidence files.
+## Files
+- `evidence/account_status.csv`: synthetic account-lifecycle inventory.
+- `evidence/windows_security_events.csv`: original seven-row baseline dataset with annotated descriptions for orientation.
+- `evidence/authentication_correlation.csv`: **extended 22-record challenge dataset** with competing sessions and record IDs.
+- `STUDENT_GUIDE.md`: analysis instructions.
+- `INVESTIGATION_TASKS.md`: 10 graded questions and reporting criteria.
+- `SHA256SUMS.txt`: hashes of the **two original** CSV files only. The supplemental extended file is not covered by this older manifest.
+- `tools/verify_evidence.py`: baseline-hash checker; not a verifier of supplemental data.
 
-All names, hosts, addresses, events and timestamps are part of this fictional training exercise. IP addresses are private RFC1918 examples. No external Internet access is required.
+## Start
+Read `STUDENT_GUIDE.md` and answer the questions in `INVESTIGATION_TASKS.md`. Work with UTC timestamps exactly as represented. The baseline logs show the case context and may reveal part of the investigative trail; the extended file is the canonical source for questions involving multi-host correlation and record IDs.
 
-## Workflow
-1. Inspect `account_status.csv` and identify accounts that are no longer active.
-2. Find that account in `windows_security_events.csv`.
-3. Identify its successful authentication record (`event_id=4624`).
-4. Compare that record with the earlier failed logon and subsequent logoff using `logon_id` where available.
-5. Submit the exact answers as recorded (UTC timestamps use `YYYY-MM-DDTHH:MM:SSZ`).
+## Educational integrity and safety
+All accounts, infrastructure, addresses and events are simulated. These are **synthetic CSV data**, not forensic images or original Windows EVTX captures. No real organization is implicated. The dataset does not establish who used the credentials, malware activity or exfiltration. No live targets or hacking actions are required.
 
-## Investigation questions
-1. Which retired user account successfully logged on to the workstation?
-2. What is the workstation hostname involved in that successful logon?
-3. What is the source IP address for that successful logon?
-4. At what exact UTC time was the successful logon recorded?
-5. Which Windows Security Event ID identifies that successful logon?
-
-## Student safety
-This exercise is passive log analysis only; no attacks or live targets are involved.
+## Author submission caution
+The public repository intentionally omits answer keys. A separately supplied instructor-only writeup, exact answer key, evidence checks and current platform submission requirements are needed before the package should be called submission-ready.
