@@ -1,0 +1,5 @@
+account,department,account_status,status_since_utc
+nve.solis,Operations,Active,2026-02-03T12:00:00Z
+nve.mora,Finance,Active,2026-04-04T12:00:00Z
+nve.audit,Security,Active,2026-01-11T12:00:00Z
+nve.alvarez,Operations,Retired,2026-09-30T17:00:00Z
