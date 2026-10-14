@@ -1,0 +1,8 @@
+timestamp_utc,event_id,computer,target_user,source_ip,logon_type,logon_id,event_description,analyst_context
+2026-10-09T08:02:14Z,4624,NVE-WS14,nve.solis,10.44.12.31,3,0x4021,Successful network logon,Authorized morning check
+2026-10-09T08:04:08Z,4625,NVE-WS14,nve.mora,10.44.12.62,3,-,Failed logon,Incorrect password
+2026-10-09T08:09:50Z,4624,NVE-WS14,nve.audit,10.44.12.18,3,0x4030,Successful network logon,Authorized audit job
+2026-10-09T08:13:26Z,4625,NVE-WS14,nve.alvarez,10.44.12.88,3,-,Failed logon,Account retired
+2026-10-09T08:14:02Z,4624,NVE-WS14,nve.alvarez,10.44.12.88,3,0x43FA,Successful network logon,Account retired
+2026-10-09T08:16:11Z,4634,NVE-WS14,nve.alvarez,10.44.12.88,3,0x43FA,Logoff,Matching logon session
+2026-10-09T08:19:09Z,4624,NVE-WS14,nve.solis,10.44.12.31,3,0x4052,Successful network logon,Authorized follow-up
