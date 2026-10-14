@@ -1,22 +1,17 @@
-# HTB Sherlock submission preparation
+# Submission readiness — CENTINELL: The Forgotten Session
 
-**Sherlock:** CENTINELL — The Forgotten Session
-**Suggested difficulty:** Easy
-**Suggested category:** Digital Forensics
+**Proposed difficulty:** Easy · **Proposed category:** Digital Forensics
 
-## Public, student-facing repository
-This repository provides only the README, investigation guide, two CSV evidence files, hashes and a hash-verification tool. It must **not** include solution flags, answer values in a solutions file, a grading key, or a private walkthrough.
+## Student-facing content
+README, STUDENT_GUIDE, INVESTIGATION_TASKS, account status CSV, baseline event CSV, supplemental 22-record correlation CSV, baseline integrity manifest and checking script.
 
-## Reviewer / author package
-Keep the instructor writeup and complete answers **outside this public repository**. The author package was prepared separately for review. If using the HTB Sherlock Submission form, supply its links/files only through approved submission mechanisms.
+## Author deliverables still required
+- [ ] Instructor-only walkthrough and ten-answer grading key (do **not** commit publicly).
+- [ ] Validate every question independently against supplemental records.
+- [ ] Refresh integrity manifest to also cover `evidence/authentication_correlation.csv` and test checker.
+- [ ] Produce versioned Sherlock evidence ZIP and, if requested by HTB, a reviewer download.
+- [ ] Confirm current HTB requirements, supported formats and submission links.
+- [ ] Consider obtaining native EVTX from a fully isolated synthetic Windows testbed if platform guidelines expect those artifacts.
 
-## Evidence limitations
-These exports were generated as synthetic training data, not collected from a running Windows machine. Real native EVTX artifacts, if required by HTB, still need to be captured and validated in an isolated lab before submission.
-
-## Quality gate
-- [ ] Every question maps to exactly one evidence-derived value
-- [ ] Timestamps include UTC and are unambiguous
-- [ ] All evidence file hashes pass
-- [ ] Student solution independently reproduced
-- [ ] No solution material exposed in public GitHub
-- [ ] Current HTB author guidelines checked
+## Known pedagogical limitation
+The seven-record baseline CSV contains explicit analyst-context hints and reveals the retired account. The extended dataset increases correlation work, but this is still an introductory case, not a realistic full incident investigation. Avoid claiming that this lab proves adversary intrusion.
