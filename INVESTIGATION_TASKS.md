@@ -16,8 +16,8 @@ A retired identity appears in synthetic authentication records at fictional Nort
 1. Which account was marked Retired before the incident day?
 2. What is the exact UTC timestamp when that account was marked Retired?
 3. How many successful Event ID 4624 records belong to that identity **across all computers** in the correlation dataset?
-4. Which two hostnames recorded those successful authentications? Return alphabetical order, comma-separated.
-5. What is the source IPv4 address of the retired identity's **earlier** successful authentication?
+4. What was the hostname of the **first** successful authentication of the retired identity?
+5. What source IPv4 address was used in that first successful authentication?
 6. On NVE-WS14, what is the UTC timestamp of the retired identity's failed logon immediately preceding its successful logon?
 7. On NVE-WS14, which record_id documents the successful authentication of the retired identity?
 8. What is the logon_id (including `0x`) for that NVE-WS14 successful session?
